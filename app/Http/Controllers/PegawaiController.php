@@ -21,7 +21,7 @@ class PegawaiController extends Controller
         $cekdata = DB::table('pegawais')->where('NIP', $nip)->first();
         $cekdata2 = DB::table('pegawais')->where('namalengkap', $namalengkap)->first();
         if($cekdata && $cekdata2){
-            return redirect('/absensi-masuk');
+            return redirect('/mng-admin');
         }else{
             return redirect()->back()->withErrors(['msg' => 'NIP atau nama anda salah !!']);
         }

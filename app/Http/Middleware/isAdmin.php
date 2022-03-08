@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use App\Models\Pegawai;
 
 class isAdmin
 {
@@ -16,7 +17,8 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->guest()){
+        $dtloginadmin = Pegawai::all();
+        if(!$dtloginadmin){
             return redirect()->back();
         }
         return $next($request);

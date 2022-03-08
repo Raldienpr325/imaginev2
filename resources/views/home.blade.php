@@ -26,13 +26,38 @@
     <link rel="stylesheet" href="{{ asset('adminLTE/plugins') }}/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('adminLTE/plugins') }}/summernote/summernote-bs4.css">
+    <script src="{{ asset('js/jam.js') }}"></script>
+    <style>
+        #watch {
+            color: rgb(252, green, blue);
+            position: absolute;
+            z-index: 1;
+            height: 40px;
+            width: 700px;
+            overflow: show;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            font-size: 10vw;
+            -webkit-text-stroke: 3px rgb(red, green, blue);
+            text-shadow: 4px 4px 10px rgba(210, 65, 36, 0.4),
+                4px 4px 20px rgba(210, 45, 26, 0.4),
+                4px 4px 30px rgba(210, 25, 16, 0.4),
+                4px 4px 40px rgba(210, 15, 06, 0.4);
+
+        }
+
+    </style>
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed" onload="realtimeClock()">
+
     <div class="wrapper">
         <nav class="main-header navbar navbar-expand navbar-dark" style="background-color: #071828">
             <ul class="navbar-nav">
@@ -60,7 +85,6 @@
         </nav>
 
 
-
         <aside class="main-sidebar elevation-4" style="background-color: #071828">
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -69,8 +93,9 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block" style="text-decoration: none;color:wheat">Hi
-                            {{ Auth::user()->name }} </a>
+                        <a href="#" class="d-block" style="text-decoration: none;color:wheat">Hi Pegawai
+                            {{-- {{ Auth::guard('webpegawai')->user()->namalengkap }} --}}
+                        </a>
                         <!--  diambil dari layouts/app.blade.php -->
                     </div>
                 </div>
@@ -78,28 +103,11 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-
                         <li class="nav-item has-treeview menu-open">
-                            <a href="{{ url('mng-admin') }}" class="nav-link ">
-                                <i class="nav-icon fas fa-user-check"></i>
+                            <a href="{{ url('absensi-masuk') }}" class="nav-link ">
+                                <i class="nav-icon fas fa-address-book"></i>
                                 <p>
-                                    Manage Admin
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="{{ url('mng-pegawai') }}" class="nav-link ">
-                                <i class="nav-icon fas fa-user-alt"></i>
-                                <p>
-                                    Manage Pegawai
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="{{ url('data-absensi') }}" class="nav-link ">
-                                <i class="nav-icon fas fa-user-alt"></i>
-                                <p>
-                                    Data Absensi
+                                    Absensi Masuk
                                 </p>
                             </a>
                         </li>
@@ -112,11 +120,11 @@
 
         <div class="content-wrapper">
             <section class="content">
-                @yield('homeAdmin')
-                @yield('homePegawai')
-                @yield('login-pegawai')
-                @yield('edit')
-                @yield('editpegawai')
+                @yield('absensi-masuk')
+                @yield('absensi-keluar')
+                @yield('done-absensi')
+
+
             </section>
         </div>
 

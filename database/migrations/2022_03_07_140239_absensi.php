@@ -16,6 +16,8 @@ class Absensi extends Migration
         Schema::create('absensi', function (Blueprint $table) {
             $table->id();
             // $table->bigInteger('pegawai_id');
+            $table->bigInteger('user_id');
+            $table->string('nama');
             $table->date('tanggal');
             $table->time('jammasuk')->nullable();
             $table->time('jamkeluar')->nullable();

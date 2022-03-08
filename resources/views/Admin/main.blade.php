@@ -1,4 +1,4 @@
-@extends('home')
+@extends('home2')
 @section('homeAdmin')
     <div class="content">
         <div class="card-body">

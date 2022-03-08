@@ -1,4 +1,4 @@
-@extends('home2')
+@extends('home')
 
 @section('absensi-masuk')
     <div class="content" style="padding:20px">

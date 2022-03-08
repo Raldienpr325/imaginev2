@@ -3,6 +3,7 @@
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,21 +21,19 @@ use Illuminate\Support\Facades\Auth;
 
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/login-pegawai', [PegawaiController::class, 'viewlogin']);
 Route::post('/login-p', [PegawaiController::class, 'index']);
 Route::get('/register-pegawai', [PegawaiController::class, 'viewregister']);
-Route::post('/store-pegawai', [PegawaiController::class, 'store']);
-Route::get('/absensi-masuk', [AbsensiController::class, 'absensimasuk']);
-Route::get('/done-absensi', [AbsensiController::class, 'doneabsensi']);
-// route pegawaiRoute::group(['middleware' => ['pegawai']],function(){ 
-Route::get('/absensi-keluar', [AbsensiController::class, 'absensikeluar']);
-Route::post('/store-masuk', [AbsensiController::class, 'storemasuk']);
-
-
-// route admin
 Route::group(['middleware' => ['admin']], function(){
-    Route::get('/mng-admin', [CrudController::class, 'mngAdmin']);
+    Route::post('/store-pegawai', [PegawaiController::class, 'store']);
+    Route::get('/absensi-masuk', [AbsensiController::class, 'absensimasuk']);
+    Route::get('/done-absensi', [AbsensiController::class, 'doneabsensi']);
+    Route::get('/absensi-keluar', [AbsensiController::class, 'absensikeluar']);
+    Route::post('/store-masuk', [AbsensiController::class, 'storemasuk']);
+});
+Route::group(['middleware' => ['admin']], function(){
     Route::get('/mng-pegawai', [CrudController::class, 'mngPegawai']);
     Route::get('/data-absensi', [CrudController::class, 'dataAbsensi']);
     Route::get('/edit-admin/{id}', [CrudController::class, 'edit']);
@@ -44,4 +43,5 @@ Route::group(['middleware' => ['admin']], function(){
     Route::post('/update-pegawai/{id}', [CrudController::class, 'updatepegawai']);
     Route::get('/hapus-pegawai/{id}', [CrudController::class, 'destroypegawai']);
     Route::get('/print-pdf', [CrudController::class, 'printpdf']);
+    Route::get('/mng-admin', [CrudController::class, 'mngAdmin']);
 });

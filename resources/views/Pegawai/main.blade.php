@@ -1,4 +1,4 @@
-@extends('home')
+@extends('home2')
 @section('homePegawai')
     <div class="content">
         <div class="card-body">
