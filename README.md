@@ -1,3 +1,5 @@
+### ABSENSI HANYA BISA DILAKUKAN SEKALI (firstOrCreate)
+
 ### Kendala 
 - Hasil Laporan absensi tidak maksimal , dikarenakan bingung untuk mengelompokkan dalam bulan.
 - absensi hari apa saja masih bisa.
@@ -11,7 +13,7 @@
 ## Alur Pegawai
 - login & register menggunakan email password
 - masuk ke absensi 
-### ABSENSI HANYA BISA DILAKUKAN SEKALI
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
