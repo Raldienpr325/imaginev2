@@ -5,6 +5,7 @@
 - absensi hari apa saja masih bisa.
 - database untuk admin dan pegawai masih tertukar (On progress)
 - admin belum ada middleware
+- perhitungan jam kerja belum akurat
 
 ## Alur Admin 
 - login & register menggunakan NIP dan nama
