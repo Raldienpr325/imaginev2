@@ -3,8 +3,8 @@
 ### Kendala 
 - Hasil Laporan absensi tidak maksimal , dikarenakan bingung untuk mengelompokkan dalam bulan.
 - absensi hari apa saja masih bisa.
-- database untuk admin dan pegawai masih tertukar (On progress)
-- admin belum ada middleware
+- database untuk admin dan pegawai masih tertukar (admin login menggunakan NIP , pegawai menggunakan EMAIL)
+- middleware auth admin
 - perhitungan jam kerja belum akurat
 
 ## Alur Admin 
@@ -15,6 +15,8 @@
 - login & register menggunakan email password
 - masuk ke absensi 
 
+## Solusi kendala
+- database bisa diganti tetapi lumayan memakan waktu
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
