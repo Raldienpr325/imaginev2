@@ -9,9 +9,8 @@
             <table class="table table-bordered">
                 <tr>
                     <th>No</th>
-                    <th>Id</th>
-                    <th>NIP</th>
                     <th>Nama</th>
+                    <th>tanggal</th>
                     <th>Jam Masuk</th>
                     <th>Jam Keluar</th>
                     <th>Jam Kerja</th>
@@ -19,9 +18,8 @@
                 @foreach ($dtabsensi as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->id }}</td>
-                        <td></td>
                         <td>{{ $item->nama }}</td>
+                        <td>{{ $item->tanggal }}</td>
                         <td>{{ $item->jammasuk }}</td>
                         <td>{{ $item->jamkeluar }}</td>
                         <td>Lama waktu : {{ $item->jamkerja }} </td>
