@@ -18,10 +18,9 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        // $dtloginadmin = DB::table('pegawais')->where('namalengkap','aldin')->first();
-        // if(!$dtloginadmin){
-        //     return redirect()->back();
-        // }
-        // return $next($request);
+        if(auth()->guest()){
+            return redirect()->back();
+        }
+        return $next($request);
     }
 }

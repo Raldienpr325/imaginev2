@@ -35,18 +35,19 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/absensi-keluar', [AbsensiController::class, 'absensikeluar']);
     Route::post('/store-masuk', [AbsensiController::class, 'storemasuk']);
 });
-
-Route::get('/data-absensi', [CrudController::class, 'dataAbsensi']);
-Route::get('/edit-admin/{id}', [CrudController::class, 'edit']);
-Route::post('/update-admin/{id}', [CrudController::class, 'update']);
-Route::get('/hapus-admin/{id}', [CrudController::class, 'destroy']);
-Route::get('/edit-pegawai/{id}', [CrudController::class, 'editpegawai']);
-Route::post('/update-pegawai/{id}', [CrudController::class, 'updatepegawai']);
-Route::get('/hapus-pegawai/{id}', [CrudController::class, 'destroypegawai']);
-Route::get('/print-pdf', [CrudController::class, 'printpdf']);
-Route::get('/mng-admin', [CrudController::class, 'mngAdmin']);
-Route::get('/mng-pegawai', [CrudController::class, 'mngPegawai']);
-Route::get('/create-admin', [CrudController::class, 'create']);
-Route::get('/create-pegawai', [CrudController::class, 'createpegawai']);
-Route::post('/simpan-admin', [CrudController::class, 'store']);
-Route::post('/simpan-pegawai', [CrudController::class, 'storepegawai']);
+Route::group(['middleware' => ['admin']],function(){
+    Route::get('/data-absensi', [CrudController::class, 'dataAbsensi']);
+    Route::post('/update-admin/{id}', [CrudController::class, 'update']);
+    Route::get('/hapus-admin/{id}', [CrudController::class, 'destroy']);
+    Route::get('/edit-pegawai/{id}', [CrudController::class, 'editpegawai']);
+    Route::post('/update-pegawai/{id}', [CrudController::class, 'updatepegawai']);
+    Route::get('/hapus-pegawai/{id}', [CrudController::class, 'destroypegawai']);
+    Route::get('/print-pdf', [CrudController::class, 'printpdf']);
+    Route::get('/mng-admin', [CrudController::class, 'mngAdmin']);
+    Route::get('/mng-pegawai', [CrudController::class, 'mngPegawai']);
+    Route::get('/create-admin', [CrudController::class, 'create']);
+    Route::get('/create-pegawai', [CrudController::class, 'createpegawai']);
+    Route::post('/simpan-admin', [CrudController::class, 'store']);
+    Route::post('/simpan-pegawai', [CrudController::class, 'storepegawai']);
+    Route::get('/edit-admin/{id}', [CrudController::class, 'edit']);
+});
