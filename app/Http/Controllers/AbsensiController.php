@@ -29,17 +29,22 @@ class AbsensiController extends Controller
         $localtime = $date->format('H:i:s');
        
         $jamkerja =  date('H:i:s', strtotime($localtime) - strtotime($jamkeluar));
-        $dtabsensi =[
-            'nama' => auth()->user()->name,
-            'tanggal' => $date,
-            'jammasuk' => $jammasuk,
-            'jamkeluar' => $jamkeluar,
-            'jamkerja' => $jamkerja
-        ];
-         Absensi::create($dtabsensi);
-         $data = DB::table('pegawais')
-         ->join('absensi','absensi.id','=','pegawais.id')->get();
-        //  dd($data);
+        // $dtabsensi =[
+        //     'nama' => auth()->user()->name,
+        //     'tanggal' => $date,
+        //     'jammasuk' => $jammasuk,
+        //     'jamkeluar' => $jamkeluar,
+        //     'jamkerja' => $jamkerja
+        // ];
+         Absensi::firstOrCreate(
+             ['nama' =>auth()->user()->name],
+             ['tanggal' => $date,
+             'jammasuk' => $jammasuk,
+             'jamkeluar' => $jamkeluar,
+             'jamkerja' => $jamkerja]
+         );
+        //  dd($firstorCreate);
+
          return redirect('/absensi-masuk')->with('success','anda berhasil melakukan absensi');
      }
 
