@@ -70,6 +70,35 @@ class CrudController extends Controller
         $pdf = Absensi::all();
         return view('Admin.printpdf',compact('pdf'));
     }
+
+    public function create(){
+        return view('Pegawai.create');
+    }
+
+    public function store(Request $request){
+        // dd($request);
+        Pegawai::create([
+            'NIP' => $request->NIP,
+            'namalengkap' =>$request->namalengkap,
+            'jeniskelamin' => $request->jeniskelamin
+        ]);
+        return redirect('/mng-pegawai')->with('success','data berhasil ditambahkan!');
+    }
+
+    public function createpegawai(){
+        return view('Admin.create');
+    }
+
+    public function storepegawai(Request $request){
+        // dd($request);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+        return redirect('/mng-admin')->with('success','data berhasil ditambah');
+    }
+
     
     
 

@@ -83,7 +83,7 @@
                             <a href="{{ url('mng-admin') }}" class="nav-link ">
                                 <i class="nav-icon fas fa-user-check"></i>
                                 <p>
-                                    Manage Admin
+                                    Manage pegawai
                                 </p>
                             </a>
                         </li>
@@ -91,7 +91,7 @@
                             <a href="{{ url('mng-pegawai') }}" class="nav-link ">
                                 <i class="nav-icon fas fa-user-alt"></i>
                                 <p>
-                                    Manage Pegawai
+                                    Manage admin
                                 </p>
                             </a>
                         </li>
@@ -117,6 +117,7 @@
                 @yield('login-pegawai')
                 @yield('edit')
                 @yield('editpegawai')
+                @yield('create')
             </section>
         </div>
 

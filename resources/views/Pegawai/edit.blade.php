@@ -6,7 +6,7 @@
             <form action="{{ url('update-pegawai', $pegawai->id) }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <input type="text" id="NIP" name="name" class="form-control @error('name') is-invalid @enderror"
+                    <input type="text" id="NIP" name="NIP" class="form-control @error('name') is-invalid @enderror"
                         placeholder="Nip" required autofocus value="{{ $pegawai->NIP }}">
                 </div>
                 <div class="form-group">

@@ -2,7 +2,9 @@
 @section('homePegawai')
     <div class="content">
         <div class="card-body">
-            <p class="text-center">Ini merupakan data dari table pegawai</p>
+            <p class="text-center">Ini merupakan data Admin</p>
+            <a href="{{ url('create-admin') }}" class="btn btn-success btn-sm" style="float: right;margin-bottom:10px">add
+                data</a>
             <table class="table table-bordered">
                 <tr>
                     <th>No</th>

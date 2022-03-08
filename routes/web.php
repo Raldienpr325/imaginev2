@@ -44,3 +44,7 @@ Route::get('/hapus-pegawai/{id}', [CrudController::class, 'destroypegawai']);
 Route::get('/print-pdf', [CrudController::class, 'printpdf']);
 Route::get('/mng-admin', [CrudController::class, 'mngAdmin']);
 Route::get('/mng-pegawai', [CrudController::class, 'mngPegawai']);
+Route::get('/create-admin', [CrudController::class, 'create']);
+Route::get('/create-pegawai', [CrudController::class, 'createpegawai']);
+Route::post('/simpan-admin', [CrudController::class, 'store']);
+Route::post('/simpan-pegawai', [CrudController::class, 'storepegawai']);

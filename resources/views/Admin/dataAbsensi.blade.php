@@ -33,4 +33,5 @@
             </table>
         </div>
     </div>
+    @include('sweetalert::alert')
 @endsection
