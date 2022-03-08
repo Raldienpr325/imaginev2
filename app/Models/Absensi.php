@@ -11,7 +11,7 @@ class Absensi extends Model
     protected $table = "absensi";
     protected $primaryKey = "id";
     protected $fillable = [
-       'id','user_id','nama','tanggal','jammasuk','jamkeluar','jamkerja'];
+       'id','nama','tanggal','jammasuk','jamkeluar','jamkerja'];
 
        public function user()
     {

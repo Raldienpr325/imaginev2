@@ -93,7 +93,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block" style="text-decoration: none;color:wheat">Hi Pegawai
+                        <a href="#" class="d-block" style="text-decoration: none;color:wheat">Hi
+                            {{ Auth::user()->name }}
                             {{-- {{ Auth::guard('webpegawai')->user()->namalengkap }} --}}
                         </a>
                         <!--  diambil dari layouts/app.blade.php -->
@@ -121,7 +122,6 @@
         <div class="content-wrapper">
             <section class="content">
                 @yield('absensi-masuk')
-                @yield('absensi-keluar')
                 @yield('done-absensi')
 
 

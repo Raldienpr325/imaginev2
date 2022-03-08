@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Absensi;
 use DateTime;
 use DateTimeZone;
+use Illuminate\Support\Facades\DB;
 
 class AbsensiController extends Controller
 {
@@ -21,28 +22,26 @@ class AbsensiController extends Controller
     }
    
     public function storemasuk(Request $request){
-       $timezone = 'Asia/Jakarta'; 
-       $jammasuk = $request['jammasuk'];
-       $jamkeluar = $request['jamkeluar'];
-       $date = new DateTime('now', new DateTimeZone($timezone)); 
-      
-       $presensi = Absensi::where([
-        ['user_id','=',auth()->user()->id],
-        ['tanggal','=',$date],
-    ])->first();
-    if ($presensi){
-        dd("sudah ada");
-    }else{
-        Absensi::create([
+        $timezone = 'Asia/Jakarta'; 
+        $jammasuk = $request['jammasuk'];
+        $jamkeluar = $request['jamkeluar'];
+        $date = new DateTime('now', new DateTimeZone($timezone)); 
+        $localtime = $date->format('H:i:s');
+       
+        $jamkerja =  date('H:i:s', strtotime($localtime) - strtotime($jamkeluar));
+        $dtabsensi =[
             'nama' => auth()->user()->name,
-            'user_id' => auth()->user()->id,
             'tanggal' => $date,
             'jammasuk' => $jammasuk,
-            'jamkeluar' => $jamkeluar
-        ]);
-    }
-        return redirect('/absensi-masuk')->with('success','anda berhasil melakukan absensi');
-    }
+            'jamkeluar' => $jamkeluar,
+            'jamkerja' => $jamkerja
+        ];
+         Absensi::create($dtabsensi);
+         $data = DB::table('pegawais')
+         ->join('absensi','absensi.id','=','pegawais.id')->get();
+        //  dd($data);
+         return redirect('/absensi-masuk')->with('success','anda berhasil melakukan absensi');
+     }
 
     
     

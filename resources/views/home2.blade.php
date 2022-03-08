@@ -69,8 +69,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block" style="text-decoration: none;color:wheat">Hi Admin
-                        </a>
+                        <a href="#" class="d-block" style="text-decoration: none;color:wheat">Hi
+                            Admin </a>
                         <!--  diambil dari layouts/app.blade.php -->
                     </div>
                 </div>

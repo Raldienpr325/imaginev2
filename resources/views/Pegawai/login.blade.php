@@ -69,7 +69,7 @@
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                     document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                                                                                                                             document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -87,20 +87,22 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-dark text-white">
-                <div class="card-header">{{ __('Admin Login') }}</div>
+                <div class="card-header text-center">{{ __('Login Admin') }}</div>
+                @if ($errors->any())
+                    <h5 class="text-center" style="color: red">{{ $errors->first() }}</h5>
+                @endif
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ url('login-p') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="NIP" class="col-md-4 col-form-label text-md-end">{{ __('NIP') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="NIP" type="text" class="form-control @error('NIP') is-invalid @enderror"
+                                    name="NIP" value="{{ old('NIP') }}" required autocomplete="NIP" autofocus>
 
-                                @error('email')
+                                @error('NIP')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -109,31 +111,27 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="namalengkap"
+                                class="col-md-4 col-form-label text-md-end">{{ __('Nama Lengkap') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="current-password">
-
-                                @error('password')
+                                <input id="namalengkap" type="text"
+                                    class="form-control @error('namalengkap') is-invalid @enderror" name="namalengkap"
+                                    required autocomplete="current-namalengkap">
+                                @error('namalengkap')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-warning">
                                     {{ __('Login') }}
                                 </button>
-                                <a href="{{ url('login') }}" style="text-decoration: none">Login sebagai
-                                    pegawai?</a>
-
+                                <a href="{{ url('login') }}" style="text-decoration: none">login sebagai Pegawai</a>
                             </div>
                         </div>
                     </form>

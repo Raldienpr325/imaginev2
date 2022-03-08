@@ -4,8 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
-use App\Models\Pegawai;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -17,14 +15,9 @@ class DatabaseSeeder extends Seeder
     {
        
         User::create([
-            'name' => 'admin',
-            'email' => 'admin@example.com',
+            'name' => 'pegawai',
+            'email' => 'pegawai@example.com',
             'password' => bcrypt('12345678')
-        ]);
-        Pegawai::create([
-            'NIP' => 1234,
-            'namalengkap' => 'aldin',
-            'jeniskelamin' => 'a'
         ]);
     
       

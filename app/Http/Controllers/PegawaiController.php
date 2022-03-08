@@ -12,7 +12,6 @@ class PegawaiController extends Controller
 
     public function viewlogin(){
         return view('Pegawai.login');
-    
     }
     
     public function index(Request $request){

@@ -4,10 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use App\Models\Pegawai;
-use Illuminate\Support\Facades\DB;
 
-class isAdmin
+class cekLevel
 {
     /**
      * Handle an incoming request.
@@ -16,12 +14,12 @@ class isAdmin
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, ...$levels)
     {
-        // $dtloginadmin = DB::table('pegawais')->where('namalengkap','aldin')->first();
-        // if(!$dtloginadmin){
-        //     return redirect()->back();
+        // if(in_array($request->user()->level,$levels)){
+        //     return $next($request);
+        // }else{
+        //     return redirect('/');
         // }
-        // return $next($request);
     }
 }
