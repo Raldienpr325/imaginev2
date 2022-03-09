@@ -18,9 +18,9 @@ class Absensi extends Migration
             // $table->bigInteger('pegawai_id');
             $table->string('nama');
             $table->date('tanggal');
-            $table->time('jammasuk')->nullable();
-            $table->time('jamkeluar')->nullable();
-            $table->time('jamkerja')->nullable();
+            $table->dateTime('jammasuk')->nullable();
+            $table->dateTime('jamkeluar')->nullable();
+            $table->integer('jamkerja')->nullable();
             $table->timestamps();
         });
     }

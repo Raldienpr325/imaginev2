@@ -20,9 +20,10 @@
                         <td>{{ $item->name }}</td>
                         <td><a href="{{ url('hapus-admin', $item->id) }}"> <button class="fas fa-trash border-0"
                                     style="color: red"></button></a>
-                            <a href="{{ url('edit-admin', $item->id) }}"> <button class="fas fa-pen border-0"
-                                    style="color: green"></button></a>
+                            <a href="{{ url('edit-admin', $item->id) }} " style="text-decoration: none;font-weight:500">
+                                <button type="button" class="btn btn-link btn-sm"></button>EDIT</a>
                         </td>
+
                     </tr>
                 @endforeach
 

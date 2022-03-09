@@ -22,7 +22,7 @@
                         <td>{{ $item->tanggal }}</td>
                         <td>{{ $item->jammasuk }}</td>
                         <td>{{ $item->jamkeluar }}</td>
-                        <td>Lama waktu : {{ $item->jamkerja }} </td>
+                        <td> {{ $item->jamkerja }} Jam </td>
                     </tr>
                 @endforeach
                 </td>

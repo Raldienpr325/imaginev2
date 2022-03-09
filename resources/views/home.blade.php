@@ -123,6 +123,7 @@
             <section class="content">
                 @yield('absensi-masuk')
                 @yield('done-absensi')
+                @yield('homee')
 
 
             </section>
