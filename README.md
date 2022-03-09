@@ -1,7 +1,7 @@
 ### ABSENSI HANYA BISA DILAKUKAN SEKALI (firstOrCreate)
 
 ### Kendala 
-- Hasil Laporan absensi tidak maksimal , dikarenakan bingung untuk mengelompokkan dalam bulan.
+- Hasil Laporan absensi tidak maksimal.
 - absensi hari apa saja masih bisa. (solved)
 - database untuk admin dan pegawai masih tertukar (admin login menggunakan NIP , pegawai menggunakan EMAIL)
 - middleware auth admin
