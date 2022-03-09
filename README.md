@@ -2,10 +2,8 @@
 
 ### Kendala 
 - Hasil Laporan absensi tidak maksimal.
-- absensi hari apa saja masih bisa. (solved)
 - database untuk admin dan pegawai masih tertukar (admin login menggunakan NIP , pegawai menggunakan EMAIL)
 - middleware auth admin
-- perhitungan jam kerja belum akurat (solved)
 
 ## Alur Admin 
 - login & register menggunakan NIP dan nama
