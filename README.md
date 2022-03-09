@@ -1,4 +1,4 @@
-### ABSENSI HANYA BISA DILAKUKAN SEKALI (firstOrCreate)
+
 
 ### Kendala 
 - Hasil Laporan absensi tidak maksimal.
