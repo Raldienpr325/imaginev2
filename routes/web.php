@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/store-masuk', [AbsensiController::class, 'storemasuk']);
 });
 
+//belum ada middleware
 Route::post('/update-admin/{id}', [CrudController::class, 'update']);
 Route::get('/hapus-admin/{id}', [CrudController::class, 'destroy']);
 Route::post('/update-pegawai/{id}', [CrudController::class, 'updatepegawai']);
