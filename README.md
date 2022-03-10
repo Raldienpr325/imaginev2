@@ -2,7 +2,7 @@
 
 ### Kendala 
 - Hasil Laporan absensi tidak maksimal.
-- database untuk admin dan pegawai masih tertukar (admin login menggunakan NIP , pegawai menggunakan EMAIL)
+- database untuk admin dan pegawai masih tertukar (admin login menggunakan NIP , pegawai menggunakan EMAIL), saat ingin ditukar ada error yang tidak bisa ter-solve
 - middleware auth admin
 
 ## Alur Admin 
@@ -13,8 +13,7 @@
 - login & register menggunakan email password
 - masuk ke absensi 
 
-## Solusi kendala
-- database bisa diganti tetapi lumayan memakan waktu
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
